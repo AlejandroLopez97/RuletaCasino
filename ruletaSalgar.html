@@ -24,80 +24,11 @@
         <br />
         <br />
         <canvas id="canvas" height="550" width="550"></canvas>
-        <script>
-            var miRuleta = new Winwheel({
-                'numSegments': 20,
-                'outerRadius': 250,
-                'segments': [
-                    { 'fillStyle': '#70F538', 'text': '25.000 + 25.000' },
-                    { 'fillStyle': '#1B3AF5', 'text': 'toma un trago' },
-                    { 'fillStyle': '#d30000', 'text': '20.000' },
-                    { 'fillStyle': '#F5F31A', 'text': '5.000' },
-                    { 'fillStyle': '#F502E3', 'text': 'Regalo sorpresa' },
-                    { 'fillStyle': '#70F538', 'text': '5.000' },
-                    { 'fillStyle': '#1B3AF5', 'text': '20.000 + 20.000' },
-                    { 'fillStyle': '#d30000', 'text': 'Vuelve a intentarlo' },
-                    { 'fillStyle': '#26E8F5', 'text': '10.000' },
-                    { 'fillStyle': '#F5F31A', 'text': '20.000' },
-                    { 'fillStyle': '#A20A6A', 'text': 'Regalo sorpresa' },
-                    { 'fillStyle': '#70F538', 'text': '5.000' },
-                    { 'fillStyle': '#1B3AF5', 'text': '25.000' },
-                    { 'fillStyle': '#d30000', 'text': '15.000 + 15.000' },
-                    { 'fillStyle': '#F5F31A', 'text': 'toma un trago' },
-                    { 'fillStyle': '#F502E3', 'text': '10.000' },
-                    { 'fillStyle': '#70F538', 'text': '5.000' },
-                    { 'fillStyle': '#1B3AF5', 'text': '10.000' },
-                    { 'fillStyle': '#70F538', 'text': 'Vuelve a intentarlo' },
-                    { 'fillStyle': '#d30000', 'text': '20.000' },
-                ],
-                'animation': {
-                    'type': 'spinToStop',
-                    'duration': 5,
-                    'callbackFinished': 'Mensaje()',
-                    'callbackAfter': 'sonar()',
-                    'callbackAfter': 'dibujarIndicador()'
-                }
-            });
-            sonar();
-            function sonar() {
-                let boton = document.querySelector("#ruleta");
-
-                boton.addEventListener("click", () => {
-                    let etiquetaAudio = document.createElement("audio")
-                    etiquetaAudio.setAttribute("src", "./audio/Ruleta.mp3")
-                    etiquetaAudio.play()
-                });
-            }
-            function Mensaje() {
-                var SegmentoSeleccionado = miRuleta.getIndicatedSegment();
-                document.getElementById('celebrar1').play();
-                alert("Ganaste: " + SegmentoSeleccionado.text + " !");
-                //Reinicio de la ruleta
-                miRuleta.stopAnimation(false);
-                miRuleta.rotationAngle = 0;
-                miRuleta.draw();
-                dibujarIndicador();
-
-            }
-            dibujarIndicador();
-            function dibujarIndicador() {
-                var ctx = miRuleta.ctx;
-                ctx.strokeStyle = 'navy';
-                ctx.fillStyle = '#0D0D0D';
-                ctx.lineWidth = 2;
-                ctx.beginPath();
-                ctx.moveTo(245, 0);
-                ctx.lineTo(305, 0);
-                ctx.lineTo(275, 45);
-                ctx.lineTo(246, 0);
-                ctx.stroke();
-                ctx.fill();
-            }
-
-            function carga_sonido() {
-                document.getElementById('sorteo').innerHTML = '<embed src="../audio/Celebracion.mp3" autostart="true" />'
-            }
-        </script>
     </center>
+    <script src="./js/ruletaSalgar.js"></script>
 </body>
+<footer>
+    <h6>&copy; 2024 Maka Casino &#40 Development by <a href="https://www.linkedin.com/in/diego-alejandro-lopez-oliveros-73a054147?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="profile">@AlejoDev</a> &#41</h6>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </html>
