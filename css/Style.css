@@ -5,13 +5,15 @@
 	background-size:100%;
 }
 #logo {
+	height: 15rem;
+	width: auto;
 	border-radius: 50%;
 	margin-left:5%;
 	margin-top:2%;
 }
 .icono-nav {
-	width: 36px; /* Ajusta el tamaño según necesites */
-	height: 36px;
+	width: 64px; /* Ajusta el tamaño según necesites */
+	height: 64px;
 }
 
 .profile{
@@ -49,7 +51,7 @@ footer{
 }
 
 h1 {
-	color: #CC181E;
+	color: #EBB63C;
 	margin-left: 5%;
 }
 :root {
