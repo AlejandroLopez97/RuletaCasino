@@ -1,6 +1,4 @@
-Ruleta(31);
-
-function Ruleta (players){
+const players = 31;
   const randomPlayers = generateRandomPlayers(players);
   const miRuleta = new Winwheel({
     'numSegments': players,
@@ -15,7 +13,7 @@ function Ruleta (players){
     }
   });
   sonar();
-}
+
 function sonar() {
   let boton = document.querySelector("#ruleta");
 
